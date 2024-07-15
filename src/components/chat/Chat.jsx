@@ -99,6 +99,7 @@ const Chat = () => {
         </div>
         <div className="message own">
           <div className="texts">
+            <img src="https://t3.ftcdn.net/jpg/00/96/00/80/360_F_96008063_XJOGkGwi5v4BKJ0iZX2qAjTpwE3Tw2SJ.jpg" alt="" />
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus natus, dignissimos repudiandae nesciunt et ut maxime mollitia eligendi eius totam tempore quae, minus error nemo a qui expedita vel. Assumenda?
             </p>
