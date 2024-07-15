@@ -3,6 +3,8 @@
     border-left: 1px solid #dddddd35;
     border-right: 1px solid #dddddd35;
     height: 100%;
+    display: flex;
+    flex-direction: column;
 
     .top {
         padding: 20px;
@@ -51,7 +53,10 @@
             }
         }
     }
-    .center{}
+    .center{
+        padding: 20px;
+        flex: 1;
+    }
     .bottom{
         padding: 20px;
         display: flex;
@@ -80,6 +85,16 @@
            border-radius: 10px;
            font-size: 16px;
            color: white;
+        }
+
+        .emoji{
+          position: relative;  
+
+          .picker{
+            position: absolute;
+            bottom: 50px;
+            left: 0;
+          }
         }
 
         .sendButton{
