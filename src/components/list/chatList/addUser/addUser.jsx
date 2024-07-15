@@ -1,7 +1,7 @@
 import React from 'react'
 import "./addUser.css"
 
-const addUser = () => {
+const AddUser = () => {
   return (
     <div className='addUser'>
       <form action="">
@@ -19,4 +19,4 @@ const addUser = () => {
   )
 }
 
-export default addUser
+export default AddUser
