@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "./chatList.css"
 import AddUser from './addUser/AddUser'
 import { useUserStore } from "../../../lib/userStore"
-import { doc, onSnapshot } from 'firebase/firestore'
+import { doc, getDoc, onSnapshot } from 'firebase/firestore'
 import { db } from '../../../lib/firebase'
 
 const ChatList = () => {
@@ -16,8 +16,16 @@ const ChatList = () => {
       const items = res.data().chats;
 
       const promises = items.map(async (item) => {
-        
-      })
+        const userDocRef = doc(db, "users", item.receiverId);
+        const userDocSnap = await getDoc(userDocRef)
+
+        const user = userDocSnap.data()
+
+        return {...item, user}
+      });
+
+      const chatData = await Promise.all(promises)
+      setChats(chatData.sort((a, b) => b.updatedAt - a.updatedAt));
 
     });
 
