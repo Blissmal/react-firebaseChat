@@ -162,7 +162,7 @@ const Chat = () => {
           <img src="./camera.png" alt="" />
           <img src="./mic.png" alt="" />
         </div>
-        <input type="text" name="" id="" placeholder='Type a message...' onChange={e => setText(e.target.value)} value={text} disabled={isCurrentUserBlocked || isReceiverBlocked}/>
+        <input type="text" name="" id="" placeholder={(isCurrentUserBlocked || isReceiverBlocked) ? "You cannot send a message" : "Type a message..."} onChange={e => setText(e.target.value)} value={text} disabled={isCurrentUserBlocked || isReceiverBlocked}/>
         <div className="emoji">
           <img src="./emoji.png" alt="" onClick={() => setOpen(prev => !prev)} />
           <div className="picker">
