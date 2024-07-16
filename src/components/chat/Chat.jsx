@@ -56,83 +56,25 @@ const Chat = () => {
         </div>
       </div>
       <div className="center">
-        <div className="message own">
-          <div className="texts">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus natus, dignissimos repudiandae nesciunt et ut maxime mollitia eligendi eius totam tempore quae, minus error nemo a qui expedita vel. Assumenda?
-            </p>
-            <span>1 min ago</span>
-          </div>
-        </div>
-        <div className="message">
-          <img src="./avatar.png" alt="" />
-          <div className="texts">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus natus, dignissimos repudiandae nesciunt et ut maxime mollitia eligendi eius totam tempore quae, minus error nemo a qui expedita vel. Assumenda?
-            </p>
-            <span>1 min ago</span>
-          </div>
-        </div>
-        <div className="message own">
-          <div className="texts">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus natus, dignissimos repudiandae nesciunt et ut maxime mollitia eligendi eius totam tempore quae, minus error nemo a qui expedita vel. Assumenda?
-            </p>
-            <span>1 min ago</span>
-          </div>
-        </div>
-        <div className="message">
-          <img src="./avatar.png" alt="" />
-          <div className="texts">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus natus, dignissimos repudiandae nesciunt et ut maxime mollitia eligendi eius totam tempore quae, minus error nemo a qui expedita vel. Assumenda?
-            </p>
-            <span>1 min ago</span>
-          </div>
-        </div>
-        <div className="message own">
-          <div className="texts">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus natus, dignissimos repudiandae nesciunt et ut maxime mollitia eligendi eius totam tempore quae, minus error nemo a qui expedita vel. Assumenda?
-            </p>
-            <span>1 min ago</span>
-          </div>
-        </div>
-        <div className="message">
-          <img src="./avatar.png" alt="" />
-          <div className="texts">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus natus, dignissimos repudiandae nesciunt et ut maxime mollitia eligendi eius totam tempore quae, minus error nemo a qui expedita vel. Assumenda?
-            </p>
-            <span>1 min ago</span>
-          </div>
-        </div>
-        <div className="message own">
-          <div className="texts">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus natus, dignissimos repudiandae nesciunt et ut maxime mollitia eligendi eius totam tempore quae, minus error nemo a qui expedita vel. Assumenda?
-            </p>
-            <span>1 min ago</span>
-          </div>
-        </div>
-        <div className="message">
-          <img src="./avatar.png" alt="" />
-          <div className="texts">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus natus, dignissimos repudiandae nesciunt et ut maxime mollitia eligendi eius totam tempore quae, minus error nemo a qui expedita vel. Assumenda?
-            </p>
-            <span>1 min ago</span>
-          </div>
-        </div>
-        <div className="message own">
-          <div className="texts">
-            <img src="https://t3.ftcdn.net/jpg/00/96/00/80/360_F_96008063_XJOGkGwi5v4BKJ0iZX2qAjTpwE3Tw2SJ.jpg" alt="" />
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus natus, dignissimos repudiandae nesciunt et ut maxime mollitia eligendi eius totam tempore quae, minus error nemo a qui expedita vel. Assumenda?
-            </p>
-            <span>1 min ago</span>
-          </div>
-        </div>
+        {
+          chat?.messages?.map(message => (
+
+            <div className="message own" key={message?.createAt}>
+              <div className="texts">
+                {
+                  message.img && <img
+                    src={message.img}
+                    alt=''
+                  ></img>
+                }
+                <p>
+                  {message.text}
+                </p>
+                {/* <span>1 min ago</span> */}
+              </div>
+            </div>
+          ))
+        }
         <div ref={endRef}></div>
       </div>
       <div className="bottom">
