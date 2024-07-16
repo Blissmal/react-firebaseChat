@@ -11,7 +11,9 @@ const Chat = () => {
 
   useEffect(() => {
     endRef.current?.scrollIntoView({behavior: "smooth"});
-  }, [])
+  }, []);
+
+  
 
   const handleEmoji = e => {
     setText(prev => prev + e.emoji)
