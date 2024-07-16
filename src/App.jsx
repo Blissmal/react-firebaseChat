@@ -14,20 +14,22 @@ const App = () => {
 
   useEffect(() => {
     const unSub = onAuthStateChanged(auth, (user) => {
-      console.log(user)
+      fetchUserInfo(user.uid)
     })
 
     return () => {
       unSub()
     }
-  }, [])
+  }, [fetchUserInfo]);
+
+  console.log(currentUser)
 
   if (isLoading) return <div className="loading">Loading...</div>
 
   return (
     <div className='container'>
       {
-        user ? (
+        currentUser ? (
           <>
             <List />
             <Chat />
