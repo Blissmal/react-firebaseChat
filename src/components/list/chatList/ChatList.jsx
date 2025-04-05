@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import "./chatList.css"
 import AddUser from './addUser/addUser'
 import { useUserStore } from "../../../lib/userStore"
